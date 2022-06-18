@@ -10,7 +10,8 @@
 #include "tuple"
 
 int speed = 1;
-int W = 1, H = 1, mx_x = 0, mx_y = 0, R = 5, dx = 150, dy = 80, MX_N = 10, MX_M = 10, size_font = 10;
+double W = 1/4., H = 1/4.;
+int mx_x = 0, mx_y = 0, R = 5, dx = 150, dy = 80, MX_N = 10, MX_M = 10, size_font = 10;
 int timer_interval = 1000;
 QWidget *par;
 QString fileName;
