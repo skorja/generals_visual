@@ -47,13 +47,30 @@
       </property>
      </widget>
     </item>
+
     <item row="0" column="4">
+     <widget class="QPushButton" name="pushPauseButton">
+      <property name="text">
+       <string>Pause</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>100 steps</string>
       </property>
      </widget>
+	</item>
+    <item row="0" column="6">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>   500 turns   </string>
+      </property>
+     </widget>
     </item>
+
+
     <item row="2" column="2">
      <spacer name="verticalSpacer">
       <property name="orientation">
@@ -71,13 +88,6 @@
      <widget class="QLabel" name="label">
       <property name="text">
        <string>Speed</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="5">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>   500 turns   </string>
       </property>
      </widget>
     </item>

@@ -31,6 +31,8 @@ private slots:
     void on_actionFull_turn_changed();
 
     void on_pushButton_2_clicked();
+	
+	void on_pushPauseButton_clicked();
 
 private:
     Ui::MainWindow *ui;

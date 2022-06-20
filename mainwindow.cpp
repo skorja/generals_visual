@@ -10,6 +10,8 @@
 #include "tuple"
 
 int speed = 1;
+bool pause_game = false;
+
 int W = 1, H = 1, mx_x = 0, mx_y = 0, R = 5, dx = 150, dy = 80, MX_N = 10, MX_M = 10, size_font = 10;
 int timer_interval = 1000;
 QWidget *par;
@@ -120,7 +122,7 @@ MainWindow::MainWindow(QWidget *parent) :
             field[i].resize(MX_M);
         }
         QVBoxLayout * layout_label = new QVBoxLayout(this);
-        ui->gridLayout->addLayout(layout_label, 1, 5);
+        ui->gridLayout->addLayout(layout_label, 1, 6);
         for (int i = 0; i < N_player; ++i)
         {
             players_score.push_back(new QLabel(QString("  1 - 100"), this));
@@ -337,8 +339,10 @@ void MainWindow::on_actionSkip_empty_turns_changed()
 
 void MainWindow::on_pushButton_clicked()
 {
-    skip_next_X_steps = 100;
-    tmr->setInterval(1);
+    if (!pause_game) {
+        skip_next_X_steps = 100;
+        tmr->setInterval(1);
+    }
 }
 
 void MainWindow::on_actionFull_turn_changed()
@@ -347,7 +351,19 @@ void MainWindow::on_actionFull_turn_changed()
 }
 
 void MainWindow::on_pushButton_2_clicked()
+{   
+    if (!pause_game) {
+        skip_next_X_steps = 500 * N_player;
+        tmr->setInterval(1);
+    }
+}
+
+void MainWindow::on_pushPauseButton_clicked()
 {
-    skip_next_X_steps = 500 * N_player;
-    tmr->setInterval(1);
+    pause_game = !pause_game;
+    if (pause_game) {
+        tmr->stop();
+    } else {
+        tmr->start();
+    }
 }
